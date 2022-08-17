@@ -1,0 +1,58 @@
+.message {
+    background-color: yellowgreen;
+    width: 500px;
+    height: 100px;
+    display: grid;
+    grid-template-columns:  0.1fr 2fr;
+    grid-column-gap: 10px;
+
+}
+
+.avatar {
+    margin-top: 50px;
+    grid-column: 1;
+    width: 60px;
+    border-radius: 25px;
+}
+
+.messageStyleGeneral {
+    grid-column: 2;
+    display: grid;
+    grid-auto-rows: minmax(min-content, max-content);
+    row-gap: 1px;
+    background-color: forestgreen;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    width: max-content;
+}
+
+.nameStyle {
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 5px;
+    margin-top: 25px;
+    color: darkviolet;
+    font-size: 15px;
+    font-weight: bold;
+    row-gap: 5px;
+
+}
+
+.messageBlock {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.messageTime {
+    margin-top: 10px;
+    margin-right: 10px;
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+    color: lightgray;
+}
+

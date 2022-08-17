@@ -1,0 +1,52 @@
+.linkBlockStyle {
+    display: inline-flex;
+    margin: 5px auto;
+}
+
+.linkItem {
+    border: 1px solid green;
+    border-radius: 10px;
+    margin-left: 5px;
+    background-color: yellowgreen;
+    font-size: 20px;
+}
+
+.linkItem a {
+    text-decoration: none;
+    margin: 5px;
+}
+
+.active {
+    font-weight: bold;
+    color: darkviolet;
+}
+
+
+
+
+
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    transition-duration: 500ms;
+    transform: translate(100px, -35px);
+    font-family: "Times New Roman";
+    position: sticky;
+    top: 0;
+}
+
+.main:hover {
+    transition-duration: 500ms;
+    transform: translate(100px, 0);
+}
+
+
+
+
+
+
+
