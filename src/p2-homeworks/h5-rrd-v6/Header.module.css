@@ -1,7 +1,3 @@
-.linkBlockStyle {
-    display: inline-flex;
-    margin: 5px auto;
-}
 
 .linkItem {
     border: 1px solid green;
@@ -9,6 +5,7 @@
     margin-left: 5px;
     background-color: yellowgreen;
     font-size: 20px;
+
 }
 
 .linkItem a {
@@ -22,26 +19,20 @@
 }
 
 
-
-
-
-
-
-
 .main {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    flex-direction: row;
     width: 280px;
-    transition-duration: 500ms;
-    transform: translate(100px, -35px);
+    transition-duration: 300ms;
+    transform: translate(-238px, 0px);
     font-family: "Times New Roman";
     position: sticky;
     top: 0;
 }
 
 .main:hover {
-    transition-duration: 500ms;
-    transform: translate(100px, 0);
+    transition-duration: 300ms;
+    transform: inherit;
 }
 
 
