@@ -5,7 +5,6 @@
     margin-left: 5px;
     background-color: yellowgreen;
     font-size: 20px;
-
 }
 
 .linkItem a {
@@ -32,7 +31,7 @@
 
 .main:hover {
     transition-duration: 300ms;
-    transform: inherit;
+    transform: translate(10px, 0);
 }
 
 
