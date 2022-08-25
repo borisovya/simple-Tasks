@@ -1,0 +1,13 @@
+.span {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.pic {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+}
+
+

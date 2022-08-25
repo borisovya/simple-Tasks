@@ -1,0 +1,7 @@
+.spanStyle {
+    width: max-content;
+    margin: auto;
+    border: 2px royalblue solid;
+    border-radius: 5px;
+    padding: 2px;
+}
