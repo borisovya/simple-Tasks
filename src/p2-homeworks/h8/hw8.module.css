@@ -1,0 +1,27 @@
+.users {
+    display: grid;
+    grid-template-columns: 100px 50px;
+    margin-left: 90px;
+    margin-top: 5px;
+    padding: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    border: 1px solid black;
+}
+
+.name {
+    grid-column: 1;
+    text-align: left;
+}
+
+.age {
+    grid-column: 2;
+    margin-left: 20px;
+
+}
+
+.buttonBlock {
+    margin-top: 10px;
+}
+

@@ -1,4 +1,5 @@
-import React, {ChangeEvent, InputHTMLAttributes, DetailedHTMLProps} from 'react'
+import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from '@mui/material'
+import React, {ChangeEvent, InputHTMLAttributes, DetailedHTMLProps, SyntheticEvent} from 'react'
 
 
 type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -16,8 +17,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
         ...restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        let onChange = e.currentTarget.value
+    const onChangeCallback = (e: React.SyntheticEvent) => {
+        const target = e.currentTarget as HTMLInputElement;
+        let onChange = target.value;
         if (onChangeOption) {
             onChangeOption(onChange)
         }
@@ -25,17 +27,33 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
 
 
     const mappedOptions: any[] = options ? options.map((o, i) => (
-        <label key={name + '-' + i}>
-            <input
-                key={i}
-                type={'radio'}
-                name={name}
-                checked={o === value}
-                value={o}
-                onChange={onChangeCallback}
-            />
-            {o}
-        </label>
+        // <label key={name + '-' + i}>
+        //     <input
+        //         key={i}
+        //         type={'radio'}
+        //         name={name}
+        //         checked={o === value}
+        //         value={o}
+        //         onChange={onChangeCallback}
+        //     />
+        //     {o}
+        // </label>
+        <FormControl>
+            <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group">
+                <FormControlLabel value={o}
+                                  control={<Radio/>}
+                                  label={o} key={i}
+                                  name={name}
+                                  checked={o === value}
+                                  onChange={onChangeCallback}
+                                   />
+            </RadioGroup>
+        </FormControl>
+
+
     )) : []
 
     return (

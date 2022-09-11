@@ -17,12 +17,10 @@ function HW6() {
 
 
     return (
-        <div>
+        <div className={s.main}>
             <hr/>
             <div>homeworks 6</div>
 
-
-            {/*should work (должно работать)*/}
             <div className={s.span}>
                 <img
                     src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw2bfTl_KQgJafLj4Vs72dUyA_Q_7xnrcrUA&usqp=CAU'

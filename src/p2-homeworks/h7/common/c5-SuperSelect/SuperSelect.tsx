@@ -1,5 +1,6 @@
+import {FormControl, InputLabel, MenuItem, OutlinedInput, Select} from '@mui/material'
 import React, {ChangeEvent, DetailedHTMLProps, SelectHTMLAttributes} from 'react'
-import {jsx} from "@emotion/react";
+
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 
@@ -15,11 +16,11 @@ const SuperSelect: React.FC<SuperSelectPropsType> = (
         ...restProps
     }
 ) => {
-    const mappedOptions: any[]  = options ? options.map((o, i)=>{
+    const mappedOptions: any[] = options ? options.map((o, i) => {
         return <option
             key={i}
             value={o}
-            selected={restProps.value === o}>{o}</option>
+            selected={restProps.value === o}> {o} </option>
     }) : []
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
