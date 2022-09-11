@@ -47,10 +47,7 @@ function HW8() {
             <span><SuperButton onClick={check}>check 18</SuperButton></span>
             </div>
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativePeople/>*/}
-            <hr/>
+
         </div>
     )
 }
