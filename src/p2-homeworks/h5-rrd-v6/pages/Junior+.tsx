@@ -1,9 +1,9 @@
 import React from 'react'
-
+import s from './GeneralStyle.module.css'
 
 function JuniorPlus() {
     return (
-        <div>
+        <div className={s.main}>
             COMING SOON!
         </div>
     )
