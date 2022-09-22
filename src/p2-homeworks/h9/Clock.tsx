@@ -28,7 +28,7 @@ function Clock() {
     }
 
     const stringTime = 'Time: ' + date?.toLocaleTimeString();  // Time: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
-    const stringDate = 'Date: ' + date?.toLocaleDateString() // fix with date
+    const stringDate = 'Date: ' + date?.toLocaleDateString()
 
     return (
         <div className={s.timer}>
