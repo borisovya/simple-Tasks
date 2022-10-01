@@ -4,7 +4,7 @@ import Message from "./Message";
 const messageData = {
     avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4WVAwlOj6XKpnXevQNEtqxssmeuEdo6jkQ&usqp=CAU',
     name: 'Vladimir',
-    message: 'Игнат-монстр!',
+    message: `What's up guys? Do you like my message style?`,
     time: '22:00',
 }
 

@@ -1,20 +1,21 @@
 import React from 'react'
 import s from './Message.module.css'
 
-type Message = {
+type MessageType = {
     avatar: string,
     name: string,
     message: string,
     time: string,
 }
 
-function Message(props: Message) {
+function Message(props: MessageType) {
     return (
         <div className={s.message}>
 
-            <span><img className={s.avatar} src={props.avatar}/></span>
+            <img className={s.avatar} src={props.avatar}/>
 
             <div className={s.messageStyleGeneral}>
+
                 <div className={s.nameStyle}>{props.name}</div>
                 <div className={s.messageBlock}>{props.message}</div>
                 <span className={s.messageTime}>{props.time}</span>
