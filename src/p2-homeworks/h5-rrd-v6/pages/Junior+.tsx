@@ -1,10 +1,11 @@
 import React from 'react'
 import s from './GeneralStyle.module.css'
+import HW13 from "../../h13/HW13";
 
 function JuniorPlus() {
     return (
         <div className={s.main}>
-            COMING SOON!
+            <HW13/>
         </div>
     )
 }
