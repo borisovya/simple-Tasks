@@ -1,50 +1,66 @@
 import React, {useState} from 'react';
-import {RequestApi} from "./hw13Api";
+import {RequestApi} from "./RequestApi";
+import {SubmitHandler, useForm} from "react-hook-form";
+import loadingGear from '../h10/Pic/preloader.svg'
 
 const Hw13 = () => {
 
-    let [message, setMessage] = useState('')
-    let [error, setError] = useState('')
+    let [response, setResponse] = useState('')
+
 
     return (
         <div>
-            <Request setMessage={setMessage} setError={setError}/>
-            {error ? error : message}
+            <Request setResponse={setResponse}/>
+            {response}
         </div>
     );
 };
 
 
-
-
 type RequestPropsType = {
-    setMessage: (message: string) => void
-    setError: (error: string) => void
+    setResponse: (response: string) => void
 }
 
 
+type Inputs = {
+    checkbox: boolean
+};
+
 const Request = (props: RequestPropsType) => {
 
-    const onClickHandler = () => {
-        RequestApi.sendRequest({success: true})
-            .then(r => {
-                if (r.data) {
-                    props.setMessage(r.data.info)
+    let [disabled, setDisabled] = useState<boolean>(false)
 
+    const {register, handleSubmit} = useForm<Inputs>();
+
+    const onSubmit: SubmitHandler<Inputs> = (data) => {
+        console.log(data)
+        setDisabled(!disabled)
+        RequestApi.sendRequest({success: data.checkbox})
+            .then((response) => {
+                setDisabled(disabled)
+                if (response) {
+                    //console.log(response.data)
+                    props.setResponse(response.data.errorText)
                 }
             })
             .catch((error) => {
-                props.setError(error.response.data.info)
-                console.log({...error});
-                console.log(error.response ? error.response.data.errorText : error.message);
+                setDisabled(disabled)
+                console.log(error)
+                props.setResponse(error.response.data.errorText)
             })
 
     }
 
+
     return <div>
-        <input type={'checkbox'}/>
-        <button onClick={onClickHandler}>Submit</button>
-    </div>
+
+        {disabled && <div><img style={{height: '50px', width: '50px'}} src={loadingGear}/></div>}
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type={'checkbox'} {...register("checkbox")} />
+            <input disabled={disabled} type="submit"/>
+        </form>
+
+    </div>;
 }
 
 export default Hw13;
